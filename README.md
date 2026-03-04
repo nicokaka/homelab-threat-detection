@@ -42,24 +42,25 @@ This repository serves as a **portfolio of practical cybersecurity projects** fo
 
 Each project is self-contained with its own documentation, source code, and lab setup instructions.
 
+
 ## 🏗️ Lab Architecture
 
 All projects run in **isolated virtual environments** using VirtualBox:
 
-┌───────────────────────────────────────────────────┐
-│                  Host Machine                     │
-│                                                   │
-│   ┌──────────────┐          ┌──────────────┐      │
-│   │   Attacker   │          │    Target    │      │
-│   │  Kali Linux  │ ◄──────► │ Ubuntu Server│      │
-│   │  Hydra, Nmap │          │   OpenSSH    │      │
-│   └──────────────┘          └──────────────┘      │
-│                                                   |
-│              NAT Network (Isolated)               | 
-└───────────────────────────────────────────────────┘
+```mermaid
+flowchart LR
+    subgraph Host["🖥️ Host Machine"]
+        subgraph NAT["NAT Network - Isolated"]
+            A["⚔️ Attacker<br>Kali Linux<br>Hydra, Nmap"]
+            T["🛡️ Target<br>Ubuntu Server<br>OpenSSH"]
+            A <---> T
+        end
+    end
+```
 
 
 > ⚠️ All attack traffic is confined to an isolated NAT network — no traffic reaches external networks.
+
 
 ## 🛠️ Tech Stack
 
