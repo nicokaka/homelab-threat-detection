@@ -1,0 +1,17 @@
+# SSH Brute-Force Detector Configuration
+# ────────────────────────────────────────
+# Override default detection parameters.
+# CLI arguments take precedence over this file.
+
+# Detection thresholds
+threshold: 5                    # Failed attempts to trigger alert
+window_seconds: 120             # Sliding window size (seconds)
+
+# Log source
+log_path: "/var/log/auth.log"   # Path to SSH authentication log
+
+# Output
+output_file: "alerts.json"     # JSON file for alert output (null = stdout only)
+
+# Active response (IPS mode)
+auto_block: false               # Set to true to auto-block via iptables (requires root)

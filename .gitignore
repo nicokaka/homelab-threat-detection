@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs (real logs should not be committed)
+*.log
+!tests/sample_auth.log
+
+# Wordlists (never commit attack dictionaries)
+*.txt
+!requirements.txt
+wordlists/
+
+# Sensitive
+*.key
+*.pem
+*.env
+
+# Alerts output
+alerts*.json
